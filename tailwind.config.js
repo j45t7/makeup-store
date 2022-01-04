@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         body: ['Nunito'],
+        title: ['Gwendolyn'],
       },
       colors: {
         sand: {
@@ -11,8 +12,11 @@ module.exports = {
           200: '#FFFCF1',
         },
         coral: '#FDDACF',
-        peach: '#F78E72',
+        peach: { 100: '#F78E72', 200: '#F9744E' },
         green: '#1E8079',
+      },
+      borderRadius: {
+        large: '6rem',
       },
     },
   },
