@@ -5,7 +5,7 @@ export const ContainerWrapper = tw.div`
   mx-auto
 `
 export const Background = tw.main`
-  bg-coral h-screen rounded-br-large
+  bg-coral h-screen rounded-br-large shadow
 `
 export const HeroWrapper = tw.header`
  h-screen grid lg:grid-cols-4 gap-4
@@ -35,5 +35,5 @@ export const HeroParagraph = tw.p`
 text-base text-green text-left pt-5 pb-5
 `
 export const HeroButton = tw.button`
-text-sand-100 bg-peach-100 hover:bg-peach-200 p-3 px-4 cursor-pointer
+text-sand-100 bg-peach-100 hover:bg-peach-200 p-3 px-4 cursor-pointer shadow
 `

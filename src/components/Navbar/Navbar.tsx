@@ -16,7 +16,7 @@ const Navbar = () => {
     <NavigationBarWrapper>
       <ContainerWrapper>
         <NavigationBarInner>
-          <Logo>Shop</Logo>
+          <Logo>Green Beauty</Logo>
           <Menu>
             <MenuList>
               <MenuItem>Home</MenuItem>

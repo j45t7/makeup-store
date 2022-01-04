@@ -7,6 +7,7 @@ export const NavigationBarWrapper = tw.nav`
   left-0
   right-0
   bg-sand-100
+  drop-shadow-md
 `
 export const NavigationBarInner = tw.nav`
   bg-100-sand
@@ -18,7 +19,7 @@ export const NavigationBarInner = tw.nav`
 `
 
 export const Logo = tw.h1`
-  text-3xl font-bold text-green leading-loose cursor-pointer
+  text-3xl font-bold text-green font-title leading-loose cursor-pointer
 `
 export const Menu = tw.div`
   md:flex hidden
