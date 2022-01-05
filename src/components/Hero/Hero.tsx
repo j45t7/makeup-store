@@ -12,12 +12,18 @@ import {
   HeroSubtitle,
   HeroParagraph,
   HeroButton,
+  Menu,
+  Logo,
 } from './HeroStyles'
 
 const Hero = () => {
   return (
     <Background>
       <ContainerWrapper>
+        <div className='flex justify-between'>
+          <Logo>Green Beauty</Logo>
+          <Menu />
+        </div>
         <HeroWrapper>
           <HeroTitle>
             <HeroText>
