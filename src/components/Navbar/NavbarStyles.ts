@@ -2,6 +2,8 @@ import tw from 'tailwind-styled-components'
 import { ShoppingBagIcon } from '@heroicons/react/outline'
 
 export const NavigationBarWrapper = tw.nav`
+  hidden
+  lg:block
   fixed
   top-0
   left-0

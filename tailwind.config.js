@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Nunito'],
+        body: ['Montserrat'],
         title: ['Gwendolyn'],
       },
       colors: {
