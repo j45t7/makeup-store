@@ -1,18 +1,35 @@
-import React, { useState, useEffect } from 'react'
-import { getProducts, Product } from './app/api'
+import React from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
+
 import './AppStyles.tsx'
-import { ContainerWrapper } from './AppStyles'
-import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/Hero'
-import Products from './components/Products/Products'
-import Footer from './components/Footer/Footer'
+
+import SingleProduct from './components/SingleProduct/SingleProduct'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import AllProducts from './pages/AllProducts'
+import Layout from './components/Layout/Layout'
+import Home from './pages/Home'
+import Cart from './pages/Cart'
 function App() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Products />
-      <Footer />
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/products' element={<AllProducts />}></Route>
+          <Route path='/products/:id' element={<SingleProduct />}></Route>
+          <Route path='/contact' element={<Contact />}></Route>
+          <Route path='/about' element={<About />}></Route>
+          <Route path='/cart' element={<Cart />}></Route>
+          {/* <Route path='*'>
+          <NotFound />
+        </Route> */}
+        </Routes>
+      </Layout>
+      {/* <Navbar /> */}
+      {/* <Hero /> */}
+      {/* <Products /> */}
+      {/* <Footer /> */}
     </>
   )
 }

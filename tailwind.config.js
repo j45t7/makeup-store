@@ -14,9 +14,13 @@ module.exports = {
         coral: '#FDDACF',
         peach: { 100: '#F78E72', 200: '#F9744E' },
         green: '#1E8079',
+        ash: '#909090',
       },
       borderRadius: {
         large: '6rem',
+      },
+      maxHeight: {
+        image: '37.5rem',
       },
     },
   },
