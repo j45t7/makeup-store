@@ -2,7 +2,7 @@ export interface Product {
   id: number;
   name: string;
   brand: string;
-  price: number;
+  price: string;
   description: string;
   image_link: string;
   api_featured_image: string;
@@ -13,6 +13,12 @@ export interface Product {
 
 export async function getProducts(): Promise<Product[]> {
   const results = await fetch("https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=vegan");
+  const product = results.json();
+  return product;
+}
+
+export async function getSingleProduct(id: any): Promise<Product> {
+  const results = await fetch(`https://makeup-api.herokuapp.com/api/v1/products/${id}.json`);
   const products = results.json();
   return products;
 }

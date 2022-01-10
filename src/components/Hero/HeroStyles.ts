@@ -44,5 +44,11 @@ export const HeroParagraph = tw.p`
 text-base text-green text-left pt-5 pb-5
 `
 export const HeroButton = tw.button`
-text-sand-100 bg-peach-100 hover:bg-peach-200 p-3 px-4 cursor-pointer shadow
+text-sand-100
+bg-peach-100
+hover:bg-peach-200
+  p-3
+  px-4
+  cursor-pointer
+  shadow
 `

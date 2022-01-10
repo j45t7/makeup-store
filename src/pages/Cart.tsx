@@ -1,5 +1,6 @@
 import React from 'react'
-import EmptyCart from '../components/EmptyCart/EmptyCart'
+import EmptyCart from '../components/Cart/EmptyCart/EmptyCart'
+import ProductCart from '../components/Cart/ProductCart/ProductCart'
 import {
   ContainerWrapper,
   TitleWrapper,
@@ -19,7 +20,8 @@ const Cart = () => {
           <Subtitle>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           </Subtitle>
-          <EmptyCart />
+          {/* <EmptyCart /> */}
+          <ProductCart />
         </TitleWrapper>
       </PageTitleWrapper>
     </ContainerWrapper>
