@@ -22,6 +22,12 @@ module.exports = {
       maxHeight: {
         image: '37.5rem',
       },
+      screens: {
+        xs: '425px',
+      },
+      fontSize: {
+        tiny: '0.5rem',
+      },
     },
   },
   plugins: [],
