@@ -21,7 +21,9 @@ const Navbar = () => {
     <NavigationBarWrapper>
       <ContainerWrapper>
         <NavigationBarInner>
-          <Logo>Green Beauty</Logo>
+          <NavLink to='/'>
+            <Logo>Green Beauty</Logo>
+          </NavLink>
           <Menu>
             <MenuList>
               <MenuItem>
