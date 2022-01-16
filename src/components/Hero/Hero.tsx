@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+
 import {
   ContainerWrapper,
   Background,
@@ -36,7 +38,9 @@ const Hero = () => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. In
                 non, iusto et ipsa dolor repellendus ex!
               </HeroParagraph>
-              <HeroButton>Shop Now</HeroButton>
+              <NavLink to='/products'>
+                <HeroButton>Shop Now</HeroButton>
+              </NavLink>
             </HeroSubtitle>
           </HeroTitle>
           <ImageWrapper>
