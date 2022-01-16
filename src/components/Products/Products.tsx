@@ -39,6 +39,7 @@ const Products = () => {
           </NavLink>
         ))}
       </ProductsWrapper>
+      {/* TODO: add button more products */}
     </ContainerWrapper>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import CartItem from '../CartItem/CartItem'
 import { useAppSelector } from '../../../hooks/hooks'
+import { OrangeButton } from '../../GlobalStyles/GlobalStyles'
 
 const ProductCart = () => {
   const products = useAppSelector((state) => state.cart.cartItems)
@@ -49,17 +50,10 @@ const ProductCart = () => {
           ${totalPrice.toFixed(2)}
         </h3>
       </div>
-      <div className='text-center mb-5'>
-        <button
-          onClick={handleBackToProductList}
-          className='text-sand-100 bg-peach-100 hover:bg-peach-200
-        p-3
-        px-4
-        cursor-pointer
-        shadow md: h-14 grid-span-1 uppercase '
-        >
+      <div className='text-center mb-28'>
+        <OrangeButton onClick={handleBackToProductList}>
           Back to product list
-        </button>
+        </OrangeButton>
       </div>
     </div>
   )

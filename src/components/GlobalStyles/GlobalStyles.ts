@@ -24,6 +24,7 @@ export const OrangeButton = tw.button`
 text-sand-100
 bg-peach-100
 hover:bg-peach-200
+uppercase
   p-3
   px-4
   cursor-pointer
