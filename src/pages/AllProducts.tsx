@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { getProducts, Product } from '../app/api'
-import ProductItem from '../components/ProductItem/ProductItem'
 import { NavLink } from 'react-router-dom'
+import ProductItem from '../components/ProductItem/ProductItem'
+import { useAppSelector } from '../hooks/hooks'
 import {
   ContainerWrapper,
   TitleWrapper,
@@ -12,14 +11,7 @@ import {
 } from '../components/GlobalStyles/GlobalStyles'
 
 const AllProducts = () => {
-  const [products, setProducts] = useState<Product[]>([])
-  useEffect(() => {
-    getProducts().then((products) => {
-      setProducts(products)
-    })
-  }, [])
-  console.log(products)
-  console.log(products.length)
+  const products = useAppSelector((state) => state.products.products)
   return (
     <ContainerWrapper>
       {/* TODO: pages */}

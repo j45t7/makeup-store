@@ -1,23 +1,11 @@
 import React from 'react'
+import { Product } from '../../app/api'
 
 interface ProductProps {
-  product: {
-    id: number
-    name: string
-    brand: string
-    price: string
-    description: string
-    image_link: string
-    api_featured_image: string
-    category: string
-    tag_list: string[]
-    product_type: string
-  }
+  product: Product
 }
 
 const ProductItem: React.FC<ProductProps> = ({ product }) => {
-  const productPrice = product?.price === '0.0' ? '5.5' : product?.price
-
   return (
     <div
       key={product.id}
@@ -32,14 +20,7 @@ const ProductItem: React.FC<ProductProps> = ({ product }) => {
         <p className='p-2 text-ellipsis overflow-hidden whitespace-nowrap'>
           {product.name}
         </p>
-        <p className='py-2'>
-          $
-          {`${
-            productPrice.length !== undefined && productPrice.length <= 3
-              ? productPrice.padEnd(4, '0')
-              : productPrice.padEnd(5, '0')
-          }`}
-        </p>
+        <p className='py-2'>${Number(product?.price).toFixed(2)}</p>
       </div>
     </div>
   )

@@ -1,30 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import { getSingleProduct, Product } from '../../../app/api'
+import React from 'react'
 import { XIcon } from '@heroicons/react/outline'
 
-const CartItem = () => {
-  const { id } = useParams<ProductId>()
-  const [product, setProduct] = useState<Product>()
+import { Product } from '../../../app/api'
+import {
+  removeAllFromCart,
+  addToCart,
+  removeFromCart,
+} from '../../../store/cartSlice'
+import { useAppDispatch } from '../../../hooks/hooks'
 
-  type ProductId = {
-    id: any
-  }
+interface ChildProps {
+  product: Product
+}
 
-  useEffect(() => {
-    getSingleProduct(1048).then((product) => {
-      setProduct(product)
-    })
-  }, [id])
-  console.log(product)
-  console.log(id)
+const CartItem: React.FC<ChildProps> = ({ product }) => {
+  const dispatch = useAppDispatch()
 
-  const productPrice = product?.price === '0.0' ? '5.5' : product?.price
   const handleChange = () => {}
   return (
     <tr className='border-b border-ash md:p-3'>
       <td>
-        <XIcon className='w-4 md:w-6 cursor-pointer' />
+        <button onClick={() => dispatch(removeAllFromCart(product))}>
+          <XIcon className='w-4 md:w-6 cursor-pointer' />
+        </button>
       </td>
       <td>
         <span className='hidden md:block'>
@@ -37,35 +35,38 @@ const CartItem = () => {
         <p className='text-sm md:text-base md:hidden'>{product?.name}</p>
       </td>
       <td className='p-6 text-sm md:text-base'>
-        $
-        {`${
-          productPrice?.length !== undefined && productPrice?.length <= 3
-            ? productPrice?.padEnd(4, '0')
-            : productPrice?.padEnd(5, '0')
-        }`}
+        ${Number(product.price).toFixed(2)}
       </td>
       <td className='text-sm md:text-base'>
         <div className='flex justify-center'>
           <input
-            className='w-10 h-14 md:w-14 md:h-14 focus:outline-none leading-6 p-0 m-0 border-solid border-2 text-center'
+            className='w-14 h-14 focus:outline-none leading-6 p-0 m-0 pl-6 border-solid border-2'
             type='number'
             min='1'
             max='9'
             step='1'
-            value='1'
+            value={product?.quantity}
             onChange={handleChange}
           />
           <div className='grid gap-0'>
-            <button className='text-base font-bold text-ash border-2 border-solid w-6'>
+            <button
+              onClick={() => dispatch(addToCart(product!))}
+              className='text-base font-bold text-ash border-2 border-solid w-6'
+            >
               +
             </button>
-            <button className='text-base font-bold text-ash border-2 border-solid'>
+            <button
+              onClick={() => dispatch(removeFromCart(product!))}
+              className='text-base font-bold text-ash border-2 border-solid'
+            >
               -
             </button>
           </div>
         </div>
       </td>
-      <td className='text-sm md:text-base'>$961</td>
+      <td className='text-sm md:text-base'>
+        ${product.total_price.toFixed(2)}
+      </td>
     </tr>
   )
 }

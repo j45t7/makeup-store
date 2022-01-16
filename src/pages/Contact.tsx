@@ -47,10 +47,11 @@ const Contact = () => {
               className='text-sand-100 bg-peach-100 hover:bg-peach-200
                 p-3
                 px-4
+                w-32
                 cursor-pointer
                 shadow'
             >
-              Sign up
+              Send
             </button>
           </form>
           <div className='grid grid-cols-1 gap-4'>

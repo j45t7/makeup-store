@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { getSingleProduct, Product } from '../../app/api'
 
+import { useAppSelector, useAppDispatch } from '../../hooks/hooks'
+import { addToCart, removeFromCart } from '../../store/cartSlice'
 import {
   ContainerWrapper,
   TitleWrapper,
@@ -17,22 +18,19 @@ type ProductId = {
 
 const SingleProduct = () => {
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
   const { id } = useParams<ProductId>()
-  const [product, setProduct] = useState<Product>()
 
-  useEffect(() => {
-    getSingleProduct(id).then((product) => {
-      setProduct(product)
-    })
-  }, [id])
-  console.log(product)
-  console.log(id)
-  const handleChange = () => {}
+  let product = useAppSelector((state) =>
+    state.products.products.find((item) => item.id === Number(id))
+  )
+
   const handleBackToProductList = () => {
     navigate('/products')
   }
+
   const productPrice = product?.price === '0.0' ? '5.5' : product?.price
-  console.log(productPrice?.length)
+
   return (
     <ContainerWrapper>
       <PageTitleWrapper>
@@ -65,26 +63,33 @@ const SingleProduct = () => {
               {product?.description}
             </p>
             <div className='flex gap-4'>
-              <div className='flex'>
+              {/* <div className='flex'>
                 <input
                   className='w-14 h-14 focus:outline-none leading-6 p-0 m-0 pl-6 border-solid border-2'
                   type='number'
                   min='1'
                   max='9'
                   step='1'
-                  value='1'
+                  value={product?.quantity}
                   onChange={handleChange}
                 />
                 <div className='grid gap-0'>
-                  <button className='text-base font-bold text-ash border-2 border-solid w-6'>
+                  <button
+                    onClick={() => dispatch(addToCart(product!))}
+                    className='text-base font-bold text-ash border-2 border-solid w-6'
+                  >
                     +
                   </button>
-                  <button className='text-base font-bold text-ash border-2 border-solid'>
+                  <button
+                    onClick={() => dispatch(removeFromCart(product!))}
+                    className='text-base font-bold text-ash border-2 border-solid'
+                  >
                     -
                   </button>
                 </div>
-              </div>
+              </div> */}
               <button
+                onClick={() => dispatch(addToCart(product!))}
                 className='text-sand-100 bg-peach-100 hover:bg-peach-200
               p-3
               px-4

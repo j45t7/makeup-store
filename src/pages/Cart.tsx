@@ -10,8 +10,10 @@ import {
   OrangeButton,
   PageTitleWrapper,
 } from '../components/GlobalStyles/GlobalStyles'
+import { useAppSelector, useAppDispatch } from '../hooks/hooks'
 
 const Cart = () => {
+  const products = useAppSelector((state) => state.cart.cartItems)
   return (
     <ContainerWrapper>
       <PageTitleWrapper>
@@ -20,8 +22,7 @@ const Cart = () => {
           <Subtitle>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           </Subtitle>
-          {/* <EmptyCart /> */}
-          <ProductCart />
+          {products.length === 0 ? <EmptyCart /> : <ProductCart />}
         </TitleWrapper>
       </PageTitleWrapper>
     </ContainerWrapper>

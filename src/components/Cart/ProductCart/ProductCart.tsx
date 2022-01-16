@@ -1,31 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import { getSingleProduct, Product } from '../../../app/api'
-import { XIcon } from '@heroicons/react/outline'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import CartItem from '../CartItem/CartItem'
-import Cart from '../../../pages/Cart'
+import { useAppSelector } from '../../../hooks/hooks'
 
 const ProductCart = () => {
+  const products = useAppSelector((state) => state.cart.cartItems)
+  const totalPrice = useAppSelector((state) => state.cart.totalPrice)
+
   const navigate = useNavigate()
-  const { id } = useParams<ProductId>()
-  const [product, setProduct] = useState<Product>()
 
-  type ProductId = {
-    id: any
-  }
-
-  useEffect(() => {
-    getSingleProduct(1048).then((product) => {
-      setProduct(product)
-    })
-  }, [id])
-  console.log(product)
-  console.log(id)
-  const productPrice = product?.price === '0.0' ? '5.5' : product?.price
-  const handleChange = () => {}
-  const handleBack = () => {
+  const handleBackToProductList = () => {
     navigate('/products')
   }
+
   return (
     <div>
       <div className='my-10 px-2'>
@@ -48,8 +35,9 @@ const ProductCart = () => {
             </tr>
           </thead>
           <tbody>
-            <CartItem />
-            <CartItem />
+            {products.map((product) => (
+              <CartItem key={product.id} product={product} />
+            ))}
           </tbody>
         </table>
       </div>
@@ -58,19 +46,19 @@ const ProductCart = () => {
           Cart Total
         </h3>
         <h3 className='col-span-1 text-center text-xl md:text-2xl font-bold'>
-          $1000
+          ${totalPrice.toFixed(2)}
         </h3>
       </div>
       <div className='text-center mb-5'>
         <button
-          // onClick={handleBack}
+          onClick={handleBackToProductList}
           className='text-sand-100 bg-peach-100 hover:bg-peach-200
         p-3
         px-4
         cursor-pointer
         shadow md: h-14 grid-span-1 uppercase '
         >
-          Proceed to checkout
+          Back to product list
         </button>
       </div>
     </div>

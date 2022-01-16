@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
+import { useAppSelector } from '../../hooks/hooks'
 import {
   ContainerWrapper,
   NavigationBarInner,
@@ -15,6 +16,7 @@ import {
 } from './NavbarStyles'
 
 const Navbar = () => {
+  const totalQuantity = useAppSelector((state) => state.cart.totalQuantity)
   return (
     <NavigationBarWrapper>
       <ContainerWrapper>
@@ -38,7 +40,7 @@ const Navbar = () => {
             <ShoppingIcon>
               <NavLink to='/cart'>
                 <ShoppingBag />
-                <ShoppingIconBadge>3</ShoppingIconBadge>
+                <ShoppingIconBadge>{totalQuantity}</ShoppingIconBadge>
               </NavLink>
             </ShoppingIcon>
           </Menu>

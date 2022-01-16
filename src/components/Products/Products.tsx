@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import { getProducts, Product } from '../../app/api'
+import { getProducts } from '../../app/api'
 import ProductItem from '../ProductItem/ProductItem'
+import { useAppSelector, useAppDispatch } from '../../hooks/hooks'
+import { receivedProducts } from '../../store/productsSlice'
 import {
   ContainerWrapper,
   TitleWrapper,
@@ -11,15 +13,17 @@ import {
 } from '../GlobalStyles/GlobalStyles'
 
 const Products = () => {
-  const [products, setProducts] = useState<Product[]>([])
+  const dispatch = useAppDispatch()
+
   useEffect(() => {
     getProducts().then((products) => {
-      products.length = 10
-      setProducts(products)
+      dispatch(receivedProducts(products))
     })
-  }, [])
-  console.log(products)
-  console.log(products.length)
+  }, [dispatch])
+
+  let products = useAppSelector((state) => state.products.products)
+  products = products.slice(0, 10)
+
   return (
     <ContainerWrapper>
       <TitleWrapper>
