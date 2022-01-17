@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { getProducts } from '../../app/api'
 import ProductItem from '../ProductItem/ProductItem'
 import { useAppSelector, useAppDispatch } from '../../hooks/hooks'
+import { useNavigate } from 'react-router-dom'
+import { OrangeButton } from '../GlobalStyles/GlobalStyles'
 import { receivedProducts } from '../../store/productsSlice'
 import {
   ContainerWrapper,
@@ -14,6 +16,11 @@ import {
 
 const Products = () => {
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+
+  const handleBackToProductList = () => {
+    navigate('/products')
+  }
 
   useEffect(() => {
     getProducts().then((products) => {
@@ -39,7 +46,11 @@ const Products = () => {
           </NavLink>
         ))}
       </ProductsWrapper>
-      {/* TODO: add button more products */}
+      <div className='text-center mb-28'>
+        <OrangeButton onClick={handleBackToProductList}>
+          See more products
+        </OrangeButton>
+      </div>
     </ContainerWrapper>
   )
 }
