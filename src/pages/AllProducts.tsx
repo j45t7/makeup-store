@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import ProductItem from '../components/ProductItem/ProductItem'
 import { useAppSelector } from '../hooks/hooks'
@@ -12,6 +13,11 @@ import {
 
 const AllProducts = () => {
   const products = useAppSelector((state) => state.products.products)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <ContainerWrapper>
       {/* TODO: pages */}
