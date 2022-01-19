@@ -64,39 +64,12 @@ const SingleProduct = () => {
               }`}
             </ProductPrice>
             <ProductDescription>{product?.description}</ProductDescription>
-            {/* <div className='flex gap-4'> */}
-            {/* <div className='flex'>
-                <input
-                  className='w-14 h-14 focus:outline-none leading-6 p-0 m-0 pl-6 border-solid border-2'
-                  type='number'
-                  min='1'
-                  max='9'
-                  step='1'
-                  value={product?.quantity}
-                  onChange={handleChange}
-                />
-                <div className='grid gap-0'>
-                  <button
-                    onClick={() => dispatch(addToCart(product!))}
-                    className='text-base font-bold text-ash border-2 border-solid w-6'
-                  >
-                    +
-                  </button>
-                  <button
-                    onClick={() => dispatch(removeFromCart(product!))}
-                    className='text-base font-bold text-ash border-2 border-solid'
-                  >
-                    -
-                  </button>
-                </div>
-              </div> */}
             <AddToCartButton onClick={() => dispatch(addToCart(product!))}>
               Add to Cart
             </AddToCartButton>
-            {/* </div> */}
-            {/* <div className='pt-5'> */}
-            <BackToProductsButton>Back To Product List</BackToProductsButton>
-            {/* </div> */}
+            <BackToProductsButton onClick={handleBackToProductList}>
+              Back To Product List
+            </BackToProductsButton>
           </ProductWrapper>
         </GridWrapper>
       </PageTitleWrapper>

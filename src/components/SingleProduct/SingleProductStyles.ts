@@ -26,15 +26,15 @@ export const ProductDescription = tw.p`
 `
 export const AddToCartButton = tw.button`
  text-sand-100 bg-peach-100 hover:bg-peach-200
-              p-3
-              px-4
-              cursor-pointer
-              shadow md: h-14 grid-span-1 uppercase w-60
+  p-3
+  px-4
+  cursor-pointer
+  shadow md: h-14 grid-span-1 uppercase w-60
 `
 export const BackToProductsButton = tw.button`
 text-sand-100 bg-green hover:bg-peach-200
-              p-3
-              px-4
-              cursor-pointer
-              shadow md: h-14 grid-span-1 uppercase w-60
+  p-3
+  px-4
+  cursor-pointer
+  shadow md: h-14 grid-span-1 uppercase w-60
 `
