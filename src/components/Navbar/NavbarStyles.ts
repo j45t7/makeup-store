@@ -1,9 +1,9 @@
 import tw from 'tailwind-styled-components'
 import { ShoppingBagIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 export const NavigationBarWrapper = tw.nav`
-  hidden
-  lg:block
+  block
   fixed
   top-0
   left-0
@@ -15,13 +15,23 @@ export const NavigationBarInner = tw.nav`
   bg-100-sand
   p-6
   w-full
-  md:flex
+  flex
   justify-between
   align-middle
 `
 
 export const Logo = tw.h1`
   text-3xl font-bold text-green font-title leading-loose cursor-pointer
+`
+export const MenuOpen = tw(XIcon)`
+text-peach-200 h-8 w-8 m-3 text-right cursor-pointer md:hidden
+`
+export const MenuClosed = tw(MenuIcon)`
+text-peach-200 h-8 w-8 m-3 text-right cursor-pointer md:hidden
+`
+
+export const MenuSmList = tw.ul`
+  text-peach-200 h-screen w-screen text-center cursor-pointer text-2xl grid place-items-center
 `
 export const Menu = tw.div`
   md:flex hidden
