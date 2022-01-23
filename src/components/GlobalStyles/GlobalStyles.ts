@@ -14,7 +14,7 @@ export const Subtitle = tw.p`
   text-green text-center pb-6
 `
 export const ProductsWrapper = tw.div`
-  grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 py-12 justify-center md:px-3
+  grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 md:gap-5 py-12 justify-center md:px-6
 `
 export const PageTitleWrapper = tw.div`
   mt-20 h-max
