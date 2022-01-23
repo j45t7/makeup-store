@@ -1,13 +1,27 @@
 import React from 'react'
 import { XIcon } from '@heroicons/react/outline'
 
+import { useAppDispatch } from '../../../hooks/hooks'
 import { Product } from '../../../app/api'
 import {
   removeAllFromCart,
   addToCart,
   removeFromCart,
 } from '../../../store/cartSlice'
-import { useAppDispatch } from '../../../hooks/hooks'
+import {
+  Row,
+  Cell,
+  CloseIcon,
+  ImageWrapper,
+  Image,
+  ProductName,
+  ProductPrice,
+  ProductQuantity,
+  QuantityInput,
+  QuantityButtonWrapper,
+  QuantityButton,
+  ProductTotalPrice,
+} from './CartItemStyles'
 
 interface ChildProps {
   product: Product
@@ -18,29 +32,25 @@ const CartItem: React.FC<ChildProps> = ({ product }) => {
 
   const handleChange = () => {}
   return (
-    <tr className='border-b border-ash md:p-3'>
-      <td>
-        <button onClick={() => dispatch(removeAllFromCart(product))}>
-          <XIcon className='w-4 md:w-6 cursor-pointer' />
-        </button>
-      </td>
-      <td>
-        <span className='hidden md:block'>
-          <img
-            src={product?.api_featured_image}
-            alt='makeup product'
-            className='w-40 p-3 m-auto'
-          />
-        </span>
-        <p className='text-sm md:text-base md:hidden'>{product?.name}</p>
-      </td>
-      <td className='p-6 text-sm md:text-base'>
-        ${Number(product.price).toFixed(2)}
-      </td>
-      <td className='text-sm md:text-base'>
-        <div className='flex justify-center'>
-          <input
-            className='w-14 h-14 focus:outline-none leading-6 p-0 m-0 pl-6 border-solid border-2'
+    <Row>
+      <Cell>
+        <CloseIcon onClick={() => dispatch(removeAllFromCart(product))}>
+          <XIcon />
+        </CloseIcon>
+      </Cell>
+      <Cell>
+        <ImageWrapper>
+          <Image src={product?.api_featured_image} alt='makeup product' />
+        </ImageWrapper>
+        <ProductName>{product?.name}</ProductName>
+      </Cell>
+      <Cell>
+        <ProductPrice>${Number(product.price).toFixed(2)}</ProductPrice>
+      </Cell>
+      <Cell>
+        {/* seperate component */}
+        <ProductQuantity>
+          <QuantityInput
             type='number'
             min='1'
             max='9'
@@ -48,26 +58,20 @@ const CartItem: React.FC<ChildProps> = ({ product }) => {
             value={product?.quantity}
             onChange={handleChange}
           />
-          <div className='grid gap-0'>
-            <button
-              onClick={() => dispatch(addToCart(product!))}
-              className='text-base font-bold text-ash border-2 border-solid w-6'
-            >
+          <QuantityButtonWrapper>
+            <QuantityButton onClick={() => dispatch(addToCart(product!))}>
               +
-            </button>
-            <button
-              onClick={() => dispatch(removeFromCart(product!))}
-              className='text-base font-bold text-ash border-2 border-solid'
-            >
+            </QuantityButton>
+            <QuantityButton onClick={() => dispatch(removeFromCart(product!))}>
               -
-            </button>
-          </div>
-        </div>
-      </td>
-      <td className='text-sm md:text-base'>
-        ${product.total_price.toFixed(2)}
-      </td>
-    </tr>
+            </QuantityButton>
+          </QuantityButtonWrapper>
+        </ProductQuantity>
+      </Cell>
+      <Cell className=''>
+        <ProductTotalPrice>${product.total_price.toFixed(2)}</ProductTotalPrice>
+      </Cell>
+    </Row>
   )
 }
 
