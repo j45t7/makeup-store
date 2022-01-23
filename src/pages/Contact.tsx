@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   ContainerWrapper,
   TitleWrapper,
@@ -9,6 +9,10 @@ import {
 } from '../components/GlobalStyles/GlobalStyles'
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <ContainerWrapper>
       <PageTitleWrapper>

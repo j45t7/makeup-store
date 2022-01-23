@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import EmptyCart from '../components/Cart/EmptyCart/EmptyCart'
 import ProductCart from '../components/Cart/ProductCart/ProductCart'
 import {
@@ -13,6 +13,10 @@ import {
 import { useAppSelector, useAppDispatch } from '../hooks/hooks'
 
 const Cart = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const products = useAppSelector((state) => state.cart.cartItems)
   return (
     <ContainerWrapper>

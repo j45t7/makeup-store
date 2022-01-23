@@ -1,5 +1,5 @@
+import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-
 import { useAppSelector, useAppDispatch } from '../../hooks/hooks'
 import { addToCart } from '../../store/cartSlice'
 import {
@@ -36,6 +36,10 @@ const SingleProduct = () => {
   let product = useAppSelector((state) =>
     state.products.products.find((item) => item.id === Number(id))
   )
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const handleBackToProductList = () => {
     navigate('/products')
