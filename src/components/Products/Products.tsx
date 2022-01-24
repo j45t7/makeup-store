@@ -13,6 +13,7 @@ import {
   Subtitle,
   ProductsWrapper,
 } from '../GlobalStyles/GlobalStyles'
+import { ButtonWrapper } from './ProductsStyles'
 
 const Products = () => {
   const dispatch = useAppDispatch()
@@ -46,11 +47,11 @@ const Products = () => {
           </NavLink>
         ))}
       </ProductsWrapper>
-      <div className='text-center mb-28'>
+      <ButtonWrapper>
         <OrangeButton onClick={handleBackToProductList}>
           See more products
         </OrangeButton>
-      </div>
+      </ButtonWrapper>
     </ContainerWrapper>
   )
 }

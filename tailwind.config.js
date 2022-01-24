@@ -22,6 +22,9 @@ module.exports = {
       maxHeight: {
         image: '37.5rem',
       },
+      minHeight: {
+        empty: '22.79rem',
+      },
       screens: {
         xs: '425px',
       },
