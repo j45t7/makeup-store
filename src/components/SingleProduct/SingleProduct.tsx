@@ -4,10 +4,8 @@ import { useAppSelector, useAppDispatch } from '../../hooks/hooks'
 import { addToCart } from '../../store/cartSlice'
 import {
   ContainerWrapper,
-  TitleWrapper,
   Title,
   Subtitle,
-  ProductsWrapper,
   PageTitleWrapper,
 } from '../GlobalStyles/GlobalStyles'
 
