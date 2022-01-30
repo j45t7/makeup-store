@@ -13,6 +13,9 @@ const Contact = () => {
     window.scrollTo(0, 0)
   }, [])
 
+  const handleSubmit = (event: React.SyntheticEvent) => {
+    event.preventDefault()
+  }
   return (
     <ContainerWrapper>
       <PageTitleWrapper>
@@ -47,6 +50,7 @@ const Contact = () => {
               />
             </div>
             <button
+              onClick={handleSubmit}
               type='submit'
               className='text-sand-100 bg-peach-100 hover:bg-peach-200
                 p-3
