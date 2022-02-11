@@ -64,7 +64,7 @@ const Contact = () => {
           </form>
           <div className='grid grid-cols-1 gap-4'>
             <img
-              src='assets/beauty2.jpeg'
+              src='beauty2.jpeg'
               alt='makeup'
               className='object-cover h-full w-full'
             />

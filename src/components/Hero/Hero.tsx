@@ -38,7 +38,7 @@ const Hero = () => {
             </HeroSubtitle>
           </HeroTitle>
           <ImageWrapper>
-            <Image src='assets/makeup.png' alt='makeup' />
+            <Image src='makeup.png' alt='makeup' />
           </ImageWrapper>
         </HeroWrapper>
       </ContainerWrapper>
