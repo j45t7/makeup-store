@@ -1,12 +1,12 @@
 # E-commerce App
 
-<img width=20 src="./screenshot.png"/>
+<img width=500 src="public/screenshot.png"/>
 
 It a responsive Vegan Cosmetics Ecommerce Store.
 
 ## How does it look like?
 
-![screenshot](./makeup.gif)
+![screenshot](./public/makeup.gif)
 
 ## How to use
 
