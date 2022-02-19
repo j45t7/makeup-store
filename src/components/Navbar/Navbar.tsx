@@ -43,7 +43,7 @@ const Navbar = () => {
             <div className='h-screen bg-white w-full grid place-items-center'>
               <ul className='text-3xl text-center h-3/6'>
                 <MenuItem>
-                  <NavLink to='/' onClick={handleToggleMenu}>
+                  <NavLink to='/makeup-store' onClick={handleToggleMenu}>
                     Home
                   </NavLink>
                 </MenuItem>
@@ -79,7 +79,7 @@ const Navbar = () => {
           <Menu>
             <MenuList>
               <MenuItem>
-                <NavLink to='/'>Home</NavLink>
+                <NavLink to='/makeup-store'>Home</NavLink>
               </MenuItem>
               <MenuItem>
                 <NavLink to='/products'>Products</NavLink>
