@@ -32,7 +32,7 @@ const Navbar = () => {
       <ContainerWrapper>
         <NavigationBarInner>
           {!toggleMenu && (
-            <NavLink to='/'>
+            <NavLink to='/makeup-store'>
               <Logo>Green Beauty</Logo>
             </NavLink>
           )}
