@@ -8,6 +8,8 @@ import {
   PageTitleWrapper,
 } from '../components/GlobalStyles/GlobalStyles'
 
+import image from '../assets/beauty1.jpeg'
+
 const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -64,7 +66,7 @@ const Contact = () => {
           </form>
           <div className='grid grid-cols-1 gap-4'>
             <img
-              src='beauty2.jpeg'
+              src={image}
               alt='makeup'
               className='object-cover h-full w-full'
             />

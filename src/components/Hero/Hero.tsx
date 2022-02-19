@@ -16,6 +16,7 @@ import {
   HeroButton,
 } from './HeroStyles'
 
+import image from '../../assets/makeup.png'
 const Hero = () => {
   return (
     <Background>
@@ -38,7 +39,7 @@ const Hero = () => {
             </HeroSubtitle>
           </HeroTitle>
           <ImageWrapper>
-            <Image src='makeup.png' alt='makeup' />
+            <Image src={image} alt='makeup' />
           </ImageWrapper>
         </HeroWrapper>
       </ContainerWrapper>

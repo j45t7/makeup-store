@@ -21,15 +21,8 @@ function App() {
           <Route path='/contact' element={<Contact />}></Route>
           <Route path='/about' element={<About />}></Route>
           <Route path='/cart' element={<Cart />}></Route>
-          {/* <Route path='*'>
-          <NotFound />
-        </Route> */}
         </Routes>
       </Layout>
-      {/* <Navbar /> */}
-      {/* <Hero /> */}
-      {/* <Products /> */}
-      {/* <Footer /> */}
     </>
   )
 }

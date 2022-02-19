@@ -8,6 +8,8 @@ import {
   PageTitleWrapper,
 } from '../components/GlobalStyles/GlobalStyles'
 
+import image from '../assets/beauty1.jpeg'
+
 const About = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -26,7 +28,7 @@ const About = () => {
         <div className='p-2 mt-8 grid md:px-20 lg:grid-cols-3 gap-10'>
           <div className='bg-white overflow-hidden'>
             <img
-              src='beauty1.jpeg'
+              src={image}
               alt='makeup'
               className='w-full h-32 sm:h-48 object-cover'
             />
@@ -46,8 +48,8 @@ const About = () => {
           </div>
           <div className='bg-white overflow-hidden'>
             <img
-              src='assets/beauty1.jpeg'
-              alt='stew'
+              src={image}
+              alt='makeup'
               className='w-full h-32 sm:h-48 object-cover'
             />
             <div className='mt-4'>
@@ -66,7 +68,7 @@ const About = () => {
           </div>
           <div className='bg-white overflow-hidden'>
             <img
-              src='beauty1.jpeg'
+              src={image}
               alt='makeup'
               className='w-full h-32 sm:h-48 object-cover'
             />
