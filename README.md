@@ -17,6 +17,7 @@ Go to [this page](https://j45t7.github.io/makeup-store/) and start playing!
 - React JS with Typescript
 - Tailwind Styled Component
 - Redux Toolkit
+- React Router
 
 ### Features
 
