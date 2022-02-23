@@ -10,7 +10,7 @@ It a responsive Vegan Cosmetics Ecommerce Store.
 
 ## How to use
 
-Go to [this page](https://j45t7.github.io/makeup-store/) and start playing!
+Go to [this page](https://j45t7.github.io/makeup-store/)!
 
 ## Tech Stack
 
