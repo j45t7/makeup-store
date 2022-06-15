@@ -20,7 +20,3 @@ export async function getProducts(): Promise<Product[]> {
 }
 
 export type CartItems = { [productID: number]: number };
-
-// utility function to simulate slowness in an API call
-const sleep = (time: number) =>
-  new Promise((res) => setTimeout(res, time));
