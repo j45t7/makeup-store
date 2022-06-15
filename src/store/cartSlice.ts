@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { checkout, CartItems, Product } from '../app/api'
+import { CartItems, Product } from '../app/api'
 import { RootState, AppDispatch } from '../store/store'
 
 
